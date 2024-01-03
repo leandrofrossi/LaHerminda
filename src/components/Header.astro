@@ -1,0 +1,39 @@
+---
+import Navbar from "./Navbar.astro";
+---
+
+<!-- Header -->
+<header class="z-50 bg-header-img bg-top bg-cover flex flex-row justify-between md:items-center md:flex-col gap-5 box-border p-4 sticky">    
+	<a href="/"><img src="../..//assets/logoo.png" class="logo" alt="Logo"></a>
+    <Navbar />    
+</header>
+
+<style>
+    header{  
+        backdrop-filter: blur(5px);       
+        top: 0%;
+        animation: adjust-header linear both;
+        animation-timeline: scroll();
+        animation-range: 0 8px;      
+    }  
+    @keyframes adjust-header{
+        to{
+            background: rgba(0, 0, 0, .3);
+            font-size: .7rem;            
+            background-image: none;
+            display: flex;
+            flex-direction: row;            
+        }           
+    }   
+    .logo{
+        width: 20vw;
+        min-width: 150px;
+        max-width: 250px;
+        aspect-ratio: 353/186;       
+        background-color: #426e69; 
+        border-radius: 50%;      
+    }
+    .logo:hover{
+        scale: 1.1;        
+    }    
+</style>

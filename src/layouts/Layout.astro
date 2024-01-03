@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="La Herminda Casa de Campo - Hospedaje en Nono, Valle de Traslasierra." />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="theme-color" content="#22333B" />
+		<meta name="robots" content="index, follow" />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:title" content="La Herminda Casa de Campo">
+  		<meta property="og:description" content="La Herminda Casa de Campo - Hospedaje en Nono, Valle de Traslasierra.">
+  		<meta property="og:image" content="/assets/bg.jpg">
+  		<meta property="og:image:alt" content="Paisaje de Nono, sierras, río y naturaleza.">
+
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="font-sans">
+		<Header />
+			<main class="bg-bg-principal text-text-principal box-border min-h-full p-4 flex flex-col items-center">
+				<slot />
+			</main>
+		<Footer />
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+	</body>
+</html>
